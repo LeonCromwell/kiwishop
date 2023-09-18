@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import style from './Header.module.scss';
 import Search from '../Search';
+import { UserIcon, CartIcon } from '~/components/Icons';
 
 const cx = classNames.bind(style);
 
@@ -30,6 +31,15 @@ function Header() {
                             <Link to="/contact">LIÊN HỆ</Link>
                         </li>
                     </ul>
+                </div>
+
+                <div className={cx('header-icon')}>
+                    <button>
+                        <UserIcon className={cx('user-icon')} />
+                    </button>
+                    <button>
+                        <CartIcon className={cx('cart-icon')} />
+                    </button>
                 </div>
             </div>
         </header>
