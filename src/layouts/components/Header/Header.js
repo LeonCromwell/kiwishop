@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // import { useState } from 'react';
 
 import style from './Header.module.scss';
+import Search from '../Search';
 
 const cx = classNames.bind(style);
 
@@ -34,6 +35,8 @@ function Header() {
                         <p className={cx('text-logo')}>KIWISTORE</p>
                     </div>
                 </Link>
+
+                <Search />
 
                 <div className={cx('group')}>
                     <ul className={cx('navigation')}>
