@@ -9,7 +9,7 @@
 
 
     width: 100%;
-    height: 80px;
+    height: 131.078px;
    
     .text-logo {
         color: #86BA09;
@@ -26,11 +26,19 @@
         height: 100%;
         padding: 20px 40px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
     }
     
+}
+.middle{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #86BA09;
 }
 
 
@@ -38,6 +46,10 @@
 .group{
     display: flex;
     align-items: center;
+
+    ul li {
+        height: 100%;
+    }
 }
 
 header ul {
@@ -47,14 +59,15 @@ header ul {
 }
 
 header ul li {
-    
     list-style: none;
 }
 
 header ul li a {
+    font-family: 'Quicksand';
+    font-weight: 600;
     position: relative;
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 14px;
     color: #333;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -66,7 +79,7 @@ header ul li a::before{
     bottom: -2px;
     width: 100%;
     height: 2px;
-    background: #333;
+    background: #86BA09;
     transform: scaleX(0);
     transition: transform 0.5s ease-in-out;
     transform-origin: right;
@@ -84,11 +97,12 @@ header ul li a:hover::before {
     display: flex;
     button {
         display: flex;
-    
+        color: #86BA09;
         justify-content: center;
         align-items: center ;
         background-color: transparent;
-        transition: transform 0.5s ease-in-out;
+        transition: scale 0.2s ease-in-out;
+        
     
         &:hover {
             cursor: pointer;

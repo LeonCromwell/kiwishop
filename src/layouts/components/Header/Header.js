@@ -11,35 +11,40 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to="/">
-                    <div className={cx('header-logo')}>
-                        <p className={cx('text-logo')}>KIWISTORE</p>
-                    </div>
-                </Link>
+                <div className={cx('middle')}>
+                    <Link to="/">
+                        <div className={cx('header-logo')}>
+                            <p className={cx('text-logo')}>KIWISTORE</p>
+                        </div>
+                    </Link>
 
-                <Search />
+                    <Search />
+
+                    <div className={cx('header-icon')}>
+                        <button>
+                            <UserIcon className={cx('user-icon')} />
+                        </button>
+                        <button>
+                            <CartIcon className={cx('cart-icon')} />
+                        </button>
+                    </div>
+                </div>
 
                 <div className={cx('group')}>
                     <ul className={cx('navigation')}>
                         <li>
-                            <Link to="/">TRANG CHỦ</Link>
+                            <Link to="/">Trang Chủ</Link>
                         </li>
                         <li>
-                            <Link to="/store">CỬA HÀNG</Link>
+                            <Link to="/store">Cửa Hàng</Link>
                         </li>
                         <li>
-                            <Link to="/contact">LIÊN HỆ</Link>
+                            <Link to="/contact">Trái cây tươi hàng ngày</Link>
+                        </li>
+                        <li>
+                            <Link to="/contact">Liên Hệ</Link>
                         </li>
                     </ul>
-                </div>
-
-                <div className={cx('header-icon')}>
-                    <button>
-                        <UserIcon className={cx('user-icon')} />
-                    </button>
-                    <button>
-                        <CartIcon className={cx('cart-icon')} />
-                    </button>
                 </div>
             </div>
         </header>
