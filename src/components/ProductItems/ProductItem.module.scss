@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.product-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.infor {
+    flex: 1;
+    margin-left: 12px;
+    .infor-name{
+        font-family: 'Quicksan';
+        font-size: 16px;
+         font-weight: 500;
+    }
+    
+    .infor-price{
+        font-size: 14px;
+        color: rgba(22, 24, 35, 0.5);
+    }
+}
