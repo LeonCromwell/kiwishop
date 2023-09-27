@@ -1,11 +1,10 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // optional for styling
 
 import style from './Header.module.scss';
 import Search from '../Search';
 import { UserIcon, CartIcon } from '~/components/Icons';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(style);
 
@@ -23,16 +22,13 @@ function Header() {
                     <Search />
 
                     <div className={cx('header-icon')}>
-                        <Tippy content="User" placement="bottom" delay={[200, 200]} animation="fade">
-                            <button>
-                                <UserIcon className={cx('user-icon')} />
-                            </button>
-                        </Tippy>
-                        <Tippy content="Cart" placement="bottom" delay={[200, 200]} animation="fade">
-                            <button>
-                                <CartIcon className={cx('cart-icon')} />
-                            </button>
-                        </Tippy>
+                        <Button to="/cart">
+                            <CartIcon className={cx('cart-icon')} />
+                        </Button>
+
+                        <Button to="/user">
+                            <UserIcon className={cx('user-icon')} />
+                        </Button>
                     </div>
                 </div>
 
