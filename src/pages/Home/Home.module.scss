@@ -1,0 +1,28 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    .inner{
+        width: 100%;
+        max-width: 1440px;
+    }
+}
+
+.intro{
+    width: 100%;
+    height: 600px;
+    // border: 1px solid black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+}

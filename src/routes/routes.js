@@ -5,6 +5,7 @@ import Contact from '~/pages/Contact';
 import NewFruits from '~/pages/NewFruits';
 import User from '~/pages/User';
 import Cart from '~/pages/Cart';
+import Register from '~/pages/Register';
 
 const publicRoutes = [
     { path: config.routes.home, component: Home },
@@ -13,6 +14,7 @@ const publicRoutes = [
     { path: config.routes.newfruits, component: NewFruits },
     { path: config.routes.user, component: User },
     { path: config.routes.cart, component: Cart },
+    { path: config.routes.register, component: Register },
 ];
 
 const privateRoutes = [];
