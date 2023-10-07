@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/kiwishop/static/css/main.aea596f8.css",
+    "main.js": "/kiwishop/static/js/main.1fa06483.js",
+    "static/js/787.8bd812f9.chunk.js": "/kiwishop/static/js/787.8bd812f9.chunk.js",
+    "static/media/anh2.png": "/kiwishop/static/media/anh2.fbb7201f74d546d10ba4.png",
+    "static/media/anh3.png": "/kiwishop/static/media/anh3.0547135d7349c6989a0f.png",
+    "static/media/anh1.png": "/kiwishop/static/media/anh1.72e19a947529d2fb1351.png",
+    "index.html": "/kiwishop/index.html",
+    "main.aea596f8.css.map": "/kiwishop/static/css/main.aea596f8.css.map",
+    "main.1fa06483.js.map": "/kiwishop/static/js/main.1fa06483.js.map",
+    "787.8bd812f9.chunk.js.map": "/kiwishop/static/js/787.8bd812f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aea596f8.css",
+    "static/js/main.1fa06483.js"
+  ]
+}
