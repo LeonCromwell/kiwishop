@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { wrap } from 'popmotion';
 
 import style from './Slide.module.scss';
@@ -40,23 +40,30 @@ function Slide() {
 
     const imageIndex = wrap(0, images.length, page);
 
-    const paginate = (newDirection) => {
-        setPage([page + newDirection, newDirection]);
-    };
+    const paginate = useCallback(
+        (newDirection) => {
+            setPage([page + newDirection, newDirection]);
+        },
+        [page],
+    );
 
     useEffect(() => {
+        //define a timeoutId
+        let timeoutId;
+
         const handle = () => {
-            setTimeout(() => {
+            timeoutId = setTimeout(() => {
                 console.log('paginate(1);');
                 paginate(1);
             }, 5000);
         };
         handle();
+
+        //this will clear Timeout. ClearTimout mong muốn nhận vào id của cái Timeout cần clear chứ không phải là 1 function
         return () => {
-            clearTimeout(handle);
+            clearTimeout(timeoutId);
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [page]);
+    }, [page, paginate]);
 
     return (
         <>
