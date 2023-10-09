@@ -21,8 +21,17 @@
     img {
         position: absolute;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        // height: 100%;
+        object-fit: scale-down;
       }
 
+}
+
+.welcome{
+    margin-top: 2.5rem;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

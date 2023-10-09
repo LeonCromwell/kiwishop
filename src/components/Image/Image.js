@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import { forwardRef, useState } from 'react';
 
 import style from './Image.module.scss';
-import { Image as image } from '~/assets/Image';
+import images from '~/assets/Image';
 
-function Image({ src, alt, fallback = image.noimage, className, ...passProps }, ref) {
+function Image({ src, alt, fallback = images.noimage, className, ...passProps }, ref) {
     const [fallBack, setFallBack] = useState('');
 
     const handleError = () => {

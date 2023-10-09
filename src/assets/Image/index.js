@@ -1,5 +1,6 @@
-const Image = {
+const images = {
     noimage: require('~/assets/Image/noimage.jpg'),
+    welcome: require('~/assets/Image/welcome.png'),
 };
 
-export default Image;
+export default images;

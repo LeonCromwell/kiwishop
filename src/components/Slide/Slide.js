@@ -53,7 +53,7 @@ function Slide() {
 
         const handle = () => {
             timeoutId = setTimeout(() => {
-                console.log('paginate(1);');
+                // console.log('paginate(1);');
                 paginate(1);
             }, 5000);
         };
