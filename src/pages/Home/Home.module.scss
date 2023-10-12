@@ -9,6 +9,8 @@
     }
 }
 
+
+//intro box
 .intro{
     width: 100%;
     height: 600px;
@@ -27,6 +29,7 @@
 
 }
 
+//welcome-box
 .welcome{
     margin-top: 2.5rem;
     width: 100%;
@@ -35,3 +38,209 @@
     justify-content: center;
     align-items: center;
 }
+
+
+//wwork time box
+
+.work-time{
+    margin-top: 2.5rem;
+    width: 100%;
+    min-width: 1300px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    // object-fit: scale-down;
+
+
+    .bg1, .bg2, .bg3, .wt-img, .wt-title{
+        position: absolute;
+        object-fit: scale-down;
+
+
+    }
+    .wt-img{
+        left:0;
+        width: 600px;
+        height: 500px;
+        flex-shrink: 0;
+    }
+    .bg1{
+        right: 0;
+        top: 0;
+    }
+    .bg2{
+       right: 20%;
+       bottom: 40%;
+       
+    }
+    .bg3{
+        bottom: 0;
+        right: 0;
+    }
+    .wt-title{
+        right: 7%;
+        top: 20%;
+        display: flex;
+        flex-direction: column;
+
+   
+
+        p{
+            color: #000;
+            text-align: justify;
+            font-family: 'Poppins', sans-serif;
+            font-size: 29px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .title-item{
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-top: 20px;
+            margin-left: 50px;
+
+            img{
+                width: 85px;
+                height: 70px;
+            }
+
+            .wt-icon{
+                width: 132px;
+                height: 104px;
+                flex-shrink: 0;
+            }
+        }
+
+        
+    }
+}
+
+//target-box
+.target-box{
+    margin-top: 15px;
+    width: 100%;
+    background-image: url('../../assets/Image/targetbox/targetimg.png');
+    background-size: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    
+ 
+
+    .target-desc{
+        padding: 30px;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        width: 800px;
+
+        color: #FFF;
+        text-align: justify;
+        font-family:'Poppins', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    img{
+        object-fit: cover;
+    }
+}
+
+.best-seller{
+    min-width: 1200px;
+
+    .best-seller-content{
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        background-image: url('../../assets/Image/Bestseller/main.png') ;
+        background-repeat: no-repeat;
+        
+        background-position: center;
+        background-size: 30%;
+
+        p{
+            width: 425px;
+            color: #000;
+            text-align: center;
+            font-family: Roboto Slab;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .col-1, .col-2{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            
+            
+
+             .row-1, .row-2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+
+                img{
+                    width: 125px;
+                    height: 137px;
+                }
+             }
+        }
+
+       
+    }
+}
+
+
+.best-seller-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    p{
+        &:nth-child(1){
+            color: #FA6C47;
+            text-align: center;
+            font-family: Meddon;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    
+        &:nth-child(2){
+            color: #000;
+            font-family: Nunito;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        &:nth-child(3){
+            color: #7A7A7A;
+            font-family: Nunito Sans;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+    }
+
+   
+}
+
+
