@@ -1,0 +1,52 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // max-width: 100%;
+    overflow: hidden;
+    flex-shrink: 1;
+    
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    &:hover{
+        transform: scale(1.1);
+        transition: transform 0.3s;
+    }
+
+
+    .image{
+        width: 250px;
+        height: 291.038px;
+        object-fit: cover;
+        // scale: 0.8;
+        flex-shrink: 1;
+        border-radius: 5px;
+
+       
+
+    }
+    .content{
+        width: 100%;
+        max-width: 250px;
+        display: inline-flex;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // gap: 10px;
+        background: #D0C3C3;
+    }
+    .title,
+    .price{
+        color: #000;
+        // text-align: center;
+        font-family: Roboto Slab;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        overflow: wrap;
+    }
+    
+}

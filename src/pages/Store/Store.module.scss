@@ -1,0 +1,148 @@
+.wrapper{
+    width: 100%;
+    
+
+    .inner{
+        width: 100%;
+        max-width: 1300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        object-fit: scale-down;
+        gap: 50px;
+        margin-bottom: 50px;
+
+
+        .inner-header-image{
+            max-width: 1300px;
+        }
+    }
+}
+.new-product{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    
+}
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    .item{
+        flex-basis: calc(20% - 20px); /* Đặt kích thước cơ bản một cách cố định, ví dụ 20% */
+        margin: 10px;
+    }
+    // gap: 5px;
+    // flex-wrap: nowrap;
+}
+.header-title{
+    width: max-content;
+    height: 144.549px;
+    padding:0px 20px 0px 20px ;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 10px solid #E0E667;
+    background: url(../../assets/Image/StoreImage/newproducttitlebackground.jfif) no-repeat center center;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+    .text{
+        // width: 427.501px;
+        height: 70.819px;
+        flex-shrink: 0;
+        color: #000;
+        text-align: center;
+        font-family: Roboto Slab;
+        font-size: 55px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &:hover{
+        transform: scale(1.1);
+        transition: transform 0.3s;
+    }
+}
+
+
+
+.benefit{
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+    background: url(../../assets/Image/StoreImage/benefitbg.png) no-repeat center center;
+    background-size: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+
+
+    .benefit-item{
+        width: 214px;
+        height: 175px;
+        flex-shrink: 0;
+
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 85px;
+            height: 90px;
+        }
+        .text{
+            color: #000;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}
+
+.list-product{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.certify{
+    background: url(../../assets/Image/StoreImage/certify/certify.png) no-repeat center center;
+    width: 100%;
+    height: 152px;
+    flex-shrink: 2;
+    object-fit: scale-down;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+
+    .item{
+        width: 100%;
+        max-width: 152px;
+        height: 100%;
+        
+    }
+}

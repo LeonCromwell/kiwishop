@@ -16,13 +16,10 @@ function Register() {
     async function saveUser(e) {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8082/home/register/save', {
+            const response = await axios.post('http://localhost:8080/api/auth/register', {
                 email: email,
                 password: password,
-                hoTen: name,
-                soDienThoai: soDienThoai,
-                diaChi: diaChi,
-                role: 'USER',
+                username: name,
             });
             console.log(response);
         } catch (error) {
