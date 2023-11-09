@@ -10,13 +10,14 @@ function App() {
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Layout = route.layout || DefaultLayout;
+                        const Title = route.title || '';
                         const Page = route.component;
                         return (
                             <Route
                                 key={index}
                                 path={route.path}
                                 element={
-                                    <Layout>
+                                    <Layout Title={Title}>
                                         <Page />
                                     </Layout>
                                 }

@@ -1,0 +1,50 @@
+.row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    span{
+        text-align: center;
+        display: flex;
+        gap: 10px;
+    }
+    span ,a{
+        color: #000;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .btn-submit{
+        display: inline-flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        background: #A4C645;
+    }
+
+    .text-register{
+        color: #000;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        gap: 5px;
+    }
+}
+#group{
+    justify-content: space-between;
+}
+
+.btn-change-variant{
+    background-color: transparent;
+    text-decoration: underline !important;
+}
+

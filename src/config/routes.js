@@ -3,9 +3,9 @@ const routes = {
     store: '/store',
     contact: '/contact',
     newfruits: '/newfruits',
-    user: '/user',
+    auth: '/auth',
     cart: '/cart',
-    register: '/register',
+    // register: '/register',
 };
 
 export default routes;

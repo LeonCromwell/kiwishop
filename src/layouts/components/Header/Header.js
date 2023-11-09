@@ -26,7 +26,7 @@ function Header() {
                             <CartIcon className={cx('cart-icon')} />
                         </Button>
 
-                        <Button to="/user">
+                        <Button to="/auth">
                             <UserIcon className={cx('user-icon')} />
                         </Button>
                     </div>
