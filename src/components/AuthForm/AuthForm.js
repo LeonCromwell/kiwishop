@@ -1,13 +1,13 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import style from './AuthForm.module.scss';
 import Button from '../Button';
 const cx = classNames.bind(style);
 
-function AuthForm() {
+function AuthForm(props) {
     const [variant, setVariant] = useState('login');
     const {
         register,
@@ -15,15 +15,23 @@ function AuthForm() {
         // formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const sendData = () => {
+        props.parentCallback(variant);
     };
     const handleClick = (e) => {
         e.preventDefault();
         setVariant(variant === 'login' ? 'register' : 'login');
     };
+    useEffect(() => {
+        sendData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [variant]);
+
+    const onSubmit = (data) => {
+        console.log(data);
+    };
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className={cx({ 'register-variant': variant === 'register' })}>
             {variant === 'login' ? (
                 <>
                     <div className={cx('row')}>

@@ -1,3 +1,10 @@
+form{
+    height: 267px;
+    transition: all 0.3s ease-in-out;
+}
+.register-variant{
+    height: 440px;
+}
 .row{
     width: 100%;
     display: flex;
@@ -26,6 +33,11 @@
         gap: 10px;
         border-radius: 10px;
         background: #A4C645;
+
+        span{
+            color: #fff;
+
+        }
     }
 
     .text-register{
