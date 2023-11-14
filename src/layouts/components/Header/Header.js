@@ -40,9 +40,7 @@ function Header() {
                         <li>
                             <Link to="/store">Cửa Hàng</Link>
                         </li>
-                        <li>
-                            <Link to="/newfruits">Trái cây tươi hàng ngày</Link>
-                        </li>
+
                         <li>
                             <Link to="/contact">Liên Hệ</Link>
                         </li>

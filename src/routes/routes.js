@@ -1,3 +1,4 @@
+
 import config from '~/config';
 import Home from '~/pages/Home';
 import Store from '~/pages/Store';
@@ -14,7 +15,7 @@ const publicRoutes = [
     { path: config.routes.contact, component: Contact, layout: Layout1 },
     { path: config.routes.newfruits, component: NewFruits },
     { path: config.routes.cart, component: Cart },
-    { path: config.routes.auth, component: Auth, layout: Layout1, title: 'ĐĂNG NHẬP' },
+    { path: config.routes.auth, component: Auth, layout: Layout1},
 ];
 
 const privateRoutes = [];

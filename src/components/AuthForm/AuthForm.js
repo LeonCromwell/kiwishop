@@ -2,9 +2,12 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
 import style from './AuthForm.module.scss';
 import Button from '../Button';
+import * as Action from '~/store/action';
+
 const cx = classNames.bind(style);
 
 function AuthForm(props) {
@@ -23,6 +26,9 @@ function AuthForm(props) {
         setVariant(variant === 'login' ? 'register' : 'login');
     };
     useEffect(() => {
+        // console.log(props);
+        props.dispatch(Action.setVariant(variant));
+        // console.log(props.variant);
         sendData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [variant]);
@@ -30,6 +36,7 @@ function AuthForm(props) {
     const onSubmit = (data) => {
         console.log(data);
     };
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={cx({ 'register-variant': variant === 'register' })}>
             {variant === 'login' ? (
@@ -92,4 +99,9 @@ function AuthForm(props) {
     );
 }
 
-export default AuthForm;
+const mapStateToProps = (state) => {
+    return {
+        variant: state.variant,
+    };
+};
+export default connect(mapStateToProps)(AuthForm);
