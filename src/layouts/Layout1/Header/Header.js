@@ -9,13 +9,17 @@ import Ucword from '~/components/Ucword';
 const cx = classNames.bind(style);
 
 function Header({ variant }) {
-    const [title, setTitle] = useState();
+    const [title, setTitle] = useState('ĐĂNG NHẬP');
 
     const handleTitle = (title) => {
         return Ucword(title);
     };
     useEffect(() => {
-        variant === 'login' ? setTitle('ĐĂNG NHẬP') : setTitle('ĐĂNG KÝ');
+        variant === 'contact'
+            ? setTitle('LIÊN HỆ')
+            : (function () {
+                  variant === 'login' ? setTitle('ĐĂNG NHẬP') : setTitle('ĐĂNG KÝ');
+              })();
     }, [variant]);
     return (
         <div className={cx('wrapper')}>

@@ -1,5 +1,5 @@
 const initState = {
-    variant: 'info',
+    variant: 'login',
 };
 function reducer(state = initState, action) {
     switch (action.type) {

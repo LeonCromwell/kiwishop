@@ -1,0 +1,138 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+
+    .left{
+        width: 530px;
+        height: 569px;
+        flex-shrink: 0;
+        border-radius: 120px;
+        // border: 1px solid #000;
+        // background: url(<path-to-image>), lightgray -22.87px 0px / 106.744% 107.381% no-repeat;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+.right {
+    .item{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 20px;
+        gap: 20px;
+    
+        p{
+            color: #000;
+            text-align: center;
+            font-family: Roboto Slab;
+            font-size: 24px;
+            margin-bottom: 0;
+            // margin-left: 15px;
+            // font-style: normal;
+            font-weight: 400;
+            // line-height: normal;
+        }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    & > p{
+        color: #000;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 30px;
+    }
+}
+
+
+
+.row{
+    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 53px;
+
+    
+    input{
+        width: 300px;
+        height: 40px;
+        flex-shrink: 0;
+        border: 1px solid rgba(0, 0, 0, 0.50);
+        background: #FFF;
+        padding: 6px 0px 5px 24px;
+    }
+    textarea{
+        width: 100%;
+        padding: 15px 0px 0px 24px;
+        min-height: 200px;
+    }
+    span{
+        text-align: center;
+        display: flex;
+        gap: 10px;
+    }
+    span ,a{
+        color: #000;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .btn-submit{
+        display: flex;
+        width: 100px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        // gap: 10px;
+        border-radius: 10px;
+        background: #7F9C39;
+
+        span{
+            color: #FFF;
+            font-family: Inter;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+
+        }
+
+        &:hover{
+            background: #6a8530;
+        }
+    }
+
+    // .text-register{
+    //     color: #000;
+    //     font-family: Inter;
+    //     font-size: 14px;
+    //     font-style: normal;
+    //     font-weight: 400;
+    //     line-height: normal;
+    //     display: flex;
+    //     gap: 5px;
+    // }
+}
+
