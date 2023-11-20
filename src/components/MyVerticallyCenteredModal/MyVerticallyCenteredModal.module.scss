@@ -1,0 +1,119 @@
+.wrapper{
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    .left{
+        width: 373px;
+        height: 427px;
+        flex-shrink: 0;
+        object-fit: cover;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.right {
+    min-width: 600px;
+    height: 427px;
+    flex-shrink: 0;
+    object-fit: cover;
+    padding-left: 62px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .title{
+        
+        &>p{
+            &:first-child{
+                color: #000;
+                font-family: Meow Script;
+                font-size: 62px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;    
+                text-align: center;
+            }
+            color: #000;
+            font-family: Lora;
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 26px;
+        }
+    }
+    .number{
+        display: flex;
+        gap: 34px;
+        align-items: center;
+        p{
+            color: #000;
+            font-family: Lora;
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    button{
+        width: 307px;
+        height: 59px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: #418041;
+        span{
+            color: #ffffff;
+        }
+    }
+}
+
+.number{ 
+    .action{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+
+    input[type='text']{
+    width: 59px;
+    height: 20px;
+    padding: 20px;
+    flex-shrink: 0;
+    background: #D9D9D9;
+    }
+
+    button{
+        width: 36px;
+        height: 40px;
+        flex-shrink: 0;
+        background: #D9D9D9;
+
+    }
+}
+
+.add-cart-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    span{
+        &:first-child{
+           svg{
+            width: 52.222px;
+            height: 40px;
+            flex-shrink: 0;
+           }
+        }
+    }
+}

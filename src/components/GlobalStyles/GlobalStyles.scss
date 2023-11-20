@@ -1,7 +1,7 @@
 // Reset css
 @import "normalize.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Inter&family=Meddon&family=Nunito+Sans:opsz,wght@6..12,300&family=Nunito:wght@300&family=Poppins&family=Quicksand:wght@600&family=Roboto+Slab&family=Exo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Inter&family=Meow+Script&family=Meddon&family=Nunito+Sans:opsz,wght@6..12,300&family=Nunito:wght@300&family=Poppins&family=Quicksand:wght@600&family=Roboto+Slab&family=Exo&display=swap');
 
 :root{
    
@@ -46,4 +46,30 @@ input,
 a {
     color: var(--text-color);
     text-decoration: none;
+}
+
+
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+}
+.modal-content{
+    width: 1046px;
+    // height: 545px;
+    // flex-shrink: 0;
+    background: url('~/src/assets/Image/Productdetails/z4012347658091_f496d7e3a39fa16caa9db05ec42b30fd 1.png') no-repeat center center;
+    background-size: cover;
+    .modal-header, .modal-footer{
+        border: none;
+    }
+
+    .modal-header{
+        .btn-close{
+            border: 1px solid #000;
+            border-radius: 50%;
+        }
+    }
+
+    
 }

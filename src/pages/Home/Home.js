@@ -22,14 +22,16 @@ function Home() {
                     <Image src={images.welcome} alt="Welcome" />
                 </div>
                 <div className={cx('work-time')}>
+                    <div>
                     <Image src={WorkTime.fruits} alt="Work Time" className={cx('wt-img')} />
                     <Image src={WorkTime.bg1} alt="Work Time" className={cx('bg1')} />
                     <Image src={WorkTime.bg2} alt="Work Time" className={cx('bg2')} />
                     <Image src={WorkTime.bg3} alt="Work Time" className={cx('bg3')} />
+                    </div>
                     <div className={cx('wt-title')}>
                         <p className={cx('title-header')}>Kiwi Store hân hạnh phục vụ quý khách:</p>
                         <div className={cx('title-item')}>
-                            <Image src={WorkTime.open} alt="Open" className={cx(' wt-icon')} />
+                            <Image src={WorkTime.open} alt="Open" className={cx('wt-icon')} />
                             <p>
                                 7h, thứ hai - thứ sáu<br></br> 9h, chủ nhật
                             </p>
