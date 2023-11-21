@@ -176,3 +176,23 @@ export const CartIconbtn = ({ width = '32px', height = '32px', className }) => (
         />
     </svg>
 );
+
+export const XCircelIcon = ({ width = '32px', height = '32px', className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <g clipPath="url(#clip0_411_190)">
+            <path
+                d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5Z"
+                stroke="black"
+                strokeWidth="1.91"
+                strokeMiterlimit="10"
+            />
+            <path d="M16.77 7.23001L7.22998 16.77" stroke="black" strokeWidth="1.91" strokeMiterlimit="10" />
+            <path d="M7.22998 7.23001L16.77 16.77" stroke="black" strokeWidth="1.91" strokeMiterlimit="10" />
+        </g>
+        <defs>
+            <clipPath id="clip0_411_190">
+                <rect width="24" height="24" fill="white" />
+            </clipPath>
+        </defs>
+    </svg>
+);

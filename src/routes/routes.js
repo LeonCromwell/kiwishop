@@ -14,7 +14,7 @@ const publicRoutes = [
     { path: config.routes.store, component: Store },
     { path: config.routes.contact, component: Contact, layout: Layout1 },
     { path: config.routes.newfruits, component: NewFruits },
-    { path: config.routes.cart, component: Cart },
+    { path: config.routes.cart, component: Cart, layout: Layout1 },
     { path: config.routes.auth, component: Auth, layout: Layout1},
 ];
 

@@ -18,7 +18,11 @@ function Header({ variant }) {
         variant === 'contact'
             ? setTitle('LIÊN HỆ')
             : (function () {
-                  variant === 'login' ? setTitle('ĐĂNG NHẬP') : setTitle('ĐĂNG KÝ');
+                  variant === 'cart'
+                      ? setTitle('GIỎ HÀNG')
+                      : (function () {
+                            variant === 'login' ? setTitle('ĐĂNG NHẬP') : setTitle('ĐĂNG KÝ');
+                        })();
               })();
     }, [variant]);
     return (
