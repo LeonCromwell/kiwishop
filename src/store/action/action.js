@@ -11,3 +11,10 @@ export const setQuantity = (quantity) => {
         quantity: quantity,
     };
 };
+
+export const setCurrentUser = (currentUser) => {
+    return {
+        type: 'SET_CURRENT_USER',
+        currentUser: currentUser,
+    };
+}

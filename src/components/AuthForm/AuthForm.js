@@ -3,15 +3,23 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import style from './AuthForm.module.scss';
 import Button from '../Button';
 import * as Action from '~/store/action';
+import * as loginService from '~/Services/authService/loginService';
 
 const cx = classNames.bind(style);
 
 function AuthForm(props) {
     const [variant, setVariant] = useState('login');
+    const [currentUser, setCurrentUser] = useState();
+
+    //toast
+    const notify = () => toast.success('Đăng nhập thành công');
+
     const {
         register,
         handleSubmit,
@@ -33,8 +41,30 @@ function AuthForm(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [variant]);
 
-    const onSubmit = (data) => {
-        console.log(data);
+    useEffect(() => {
+        props.dispatch(Action.setCurrentUser(currentUser));
+        // console.log(props.currentUser);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentUser]);
+
+    const onSubmit = async (Data) => {
+        if (variant === 'login') {
+            try {
+                const res = await loginService.login(Data.username, Data.password);
+                if (res) {
+                    notify();
+                    setCurrentUser(res);
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 5000);
+                } else {
+                    toast.error('Đăng nhập thất bại');
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
     };
 
     return (
@@ -105,6 +135,8 @@ function AuthForm(props) {
                     </p>
                 </div>
             </form>
+
+            <ToastContainer />
         </div>
     );
 }
@@ -112,6 +144,7 @@ function AuthForm(props) {
 const mapStateToProps = (state) => {
     return {
         variant: state.variant,
+        currentUser: state.currentUser,
     };
 };
 export default connect(mapStateToProps)(AuthForm);

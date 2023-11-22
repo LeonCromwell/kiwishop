@@ -1,6 +1,7 @@
 const initState = {
     variant: 'login',
     quantity: 0,
+    currentUser: {},
 };
 function reducer(state = initState, action) {
     switch (action.type) {
@@ -8,6 +9,11 @@ function reducer(state = initState, action) {
             return {
                 ...state,
                 variant: action.variant,
+            };
+        case 'SET_CURRENT_USER':
+            return {
+                ...state,
+                currentUser: action.currentUser,
             };
         default:
             return state;
