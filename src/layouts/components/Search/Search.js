@@ -8,26 +8,9 @@ import style from './search.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import ProductItem from '~/components/ProductItems/ProductItem';
 import { useDebounce } from '~/Hooks';
+import * as SearchService from '~/Services/Search/searchService';
 
 const cx = classNames.bind(style);
-
-const SEARCH_RESULT = [
-    {
-        name: 'Táo xanh',
-        lowest_price: 100000,
-        highest_price: 200000,
-    },
-    {
-        name: 'Nho xanh',
-        lowest_price: 150000,
-        highest_price: 200000,
-    },
-    {
-        name: 'Dâu tây',
-        lowest_price: 100000,
-        highest_price: 500000,
-    },
-];
 
 function Search() {
     const [hide, setHide] = useState(false);
@@ -45,10 +28,18 @@ function Search() {
             return;
         }
         setIsLoading(true);
-        setTimeout(() => {
-            setSearchResult(SEARCH_RESULT);
-            setIsLoading(false);
-        }, [1000]);
+
+        //fetch data form api
+        const fetchData = async () => {
+            try {
+                const res = await SearchService.search(debouncedValue);
+                setSearchResult(res);
+                setIsLoading(false);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
     }, [debouncedValue]);
 
     const handleHideResult = () => {
@@ -58,61 +49,63 @@ function Search() {
     const handleSearch = (e) => setSearchValue(e.target.value);
 
     return (
-        <HeadlessTippy
-            visible={!hide && searchResult.length > 0}
-            placement="bottom-start"
-            interactive="true"
-            render={(attrs) => (
-                <div className={cx('search-result')} {...attrs}>
-                    <PopperWrapper>
-                        <label className={cx('search-label')}>
-                            <h4>Sản Phẩm</h4>
-                        </label>
+        <div>
+            <HeadlessTippy
+                visible={!hide && searchResult.length > 0}
+                placement="bottom-start"
+                interactive="true"
+                render={(attrs) => (
+                    <div className={cx('search-result')} {...attrs}>
+                        <PopperWrapper>
+                            <label className={cx('search-label')}>
+                                <h4>Sản Phẩm</h4>
+                            </label>
 
-                        {searchResult.map((item, index) => (
-                            <ProductItem data={item} key={index} />
-                        ))}
-                    </PopperWrapper>
-                </div>
-            )}
-            onClickOutside={handleHideResult}
-        >
-            <div className={cx('wrapper')}>
-                <div className={cx('search')}>
-                    <input
-                        ref={inputRef}
-                        placeholder="Bạn đang tìm kiếm gì?"
-                        spellCheck="false"
-                        value={searchValue}
-                        onChange={handleSearch}
-                        onFocus={() => {
-                            setHide(false);
-                        }}
-                    />
-
-                    <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-
-                    {!!searchValue && !isLoading && (
-                        <button
-                            className={cx('clear-btn')}
-                            onClick={() => {
-                                setSearchValue('');
-                                inputRef.current.focus();
+                            {searchResult.map((item, index) => (
+                                <ProductItem data={item} key={index} />
+                            ))}
+                        </PopperWrapper>
+                    </div>
+                )}
+                onClickOutside={handleHideResult}
+            >
+                <div className={cx('wrapper')}>
+                    <div className={cx('search')}>
+                        <input
+                            ref={inputRef}
+                            placeholder="Bạn đang tìm kiếm gì?"
+                            spellCheck="false"
+                            value={searchValue}
+                            onChange={handleSearch}
+                            onFocus={() => {
+                                setHide(false);
                             }}
-                        >
-                            <FontAwesomeIcon icon={faCircleXmark} />
+                        />
+
+                        <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </button>
-                    )}
-                    {isLoading && (
-                        <span className={cx('spinner')}>
-                            <FontAwesomeIcon icon={faSpinner} />
-                        </span>
-                    )}
+
+                        {!!searchValue && !isLoading && (
+                            <button
+                                className={cx('clear-btn')}
+                                onClick={() => {
+                                    setSearchValue('');
+                                    inputRef.current.focus();
+                                }}
+                            >
+                                <FontAwesomeIcon icon={faCircleXmark} />
+                            </button>
+                        )}
+                        {isLoading && (
+                            <span className={cx('spinner')}>
+                                <FontAwesomeIcon icon={faSpinner} />
+                            </span>
+                        )}
+                    </div>
                 </div>
-            </div>
-        </HeadlessTippy>
+            </HeadlessTippy>
+        </div>
     );
 }
 

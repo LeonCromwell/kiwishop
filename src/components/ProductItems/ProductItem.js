@@ -13,9 +13,7 @@ function ProductItem({ data, to }) {
                 <p className={cx('infor-name')}>
                     <span>{data.name}</span>
                 </p>
-                <span className={cx('infor-price')}>
-                    {data.lowest_price}đ - {data.highest_price}đ
-                </span>
+                <span className={cx('infor-price')}>{data.price}đ</span>
             </div>
         </Link>
     );
