@@ -7,19 +7,21 @@ import Image from '../Image';
 
 const cx = classNames.bind(styles);
 
-function NewProductItem({ data, className }) {
+function NewProductItem({ Data, className }) {
     const [modalShow, setModalShow] = useState(false);
 
     const handleClick = () => {
         setModalShow(true);
     };
+
     return (
         <>
             <div className={cx('wrapper', className)} onClick={handleClick}>
-                <Image src={data.img} className={cx('image')} />
+                <Image src={Data.images[0].data} className={cx('image')} />
+
                 <div className={cx('content')}>
-                    <div className={cx('title')}>{data.title}</div>
-                    <div className={cx('price')}>{data.price} đ/kg</div>
+                    <div className={cx('title')}>{Data.name}</div>
+                    <div className={cx('price')}>{Data.price} đ/kg</div>
                 </div>
             </div>
 

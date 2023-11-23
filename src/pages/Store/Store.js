@@ -1,89 +1,15 @@
 import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
 
 import style from './Store.module.scss';
 import Image from '~/components/Image';
 import StoreImage from '~/assets/Image/StoreImage';
 import Certify from '~/assets/Image/StoreImage/certify';
 import NewProductItem from '~/components/NewProductItem';
+import * as productService from '~/Services/ProductService/productService';
 
 const cx = classNames.bind(style);
-const NEW_PRODUCT_ITEMS = [
-    {
-        img: 'https://dalatfarm.net/wp-content/uploads/2020/12/dau-tay-da-lat-300x300.jpg',
-        to: '/product',
-        title: 'Dâu tây Đà Lạt',
-        price: '400.000',
-    },
-    {
-        img: 'https://thucphamsachgiatot.vn/image/cache/catalog/V-CAM-RUOT-DO-MY-700x700.jpg',
-        to: '/product',
-        title: 'Cam ruột đỏ Mỹ',
-        price: '500.000',
-    },
-    {
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1M7CT9OJ8XCwl_x9fNCUNbDFfP55w10KHCdiMGTHiPQ&s',
-        to: '/product',
-        title: 'Nho tím',
-        price: '400.000',
-    },
-    {
-        img: 'https://newfreshfoods.com.vn/datafiles/3/2018-02-27/16100978059780_d94nfxGl.jpg',
-        to: '/product',
-        title: 'Kiwi',
-        price: '350.000',
-    },
-];
 
-const PRODUCT = [
-    {
-        img: 'https://dalatfarm.net/wp-content/uploads/2020/12/dau-tay-da-lat-300x300.jpg',
-        to: '/product',
-        title: 'Dâu tây Đà Lạt',
-        price: '400.000',
-    },
-    {
-        img: 'https://thucphamsachgiatot.vn/image/cache/catalog/V-CAM-RUOT-DO-MY-700x700.jpg',
-        to: '/product',
-        title: 'Cam ruột đỏ Mỹ',
-        price: '500.000',
-    },
-    {
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1M7CT9OJ8XCwl_x9fNCUNbDFfP55w10KHCdiMGTHiPQ&s',
-        to: '/product',
-        title: 'Nho tím',
-        price: '400.000',
-    },
-    {
-        img: 'https://newfreshfoods.com.vn/datafiles/3/2018-02-27/16100978059780_d94nfxGl.jpg',
-        to: '/product',
-        title: 'Kiwi',
-        price: '350.000',
-    },
-    {
-        img: 'https://dalatfarm.net/wp-content/uploads/2020/12/dau-tay-da-lat-300x300.jpg',
-        to: '/product',
-        title: 'Dâu tây Đà Lạt',
-        price: '400.000',
-    },
-    {
-        img: 'https://thucphamsachgiatot.vn/image/cache/catalog/V-CAM-RUOT-DO-MY-700x700.jpg',
-        to: '/product',
-        title: 'Cam ruột đỏ Mỹ',
-        price: '500.000',
-    },
-    {
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1M7CT9OJ8XCwl_x9fNCUNbDFfP55w10KHCdiMGTHiPQ&s',
-        to: '/product',
-        title: 'Nho tím',
-        price: '400.000',
-    },
-    {
-        img: 'https://newfreshfoods.com.vn/datafiles/3/2018-02-27/16100978059780_d94nfxGl.jpg',
-        to: '/product',
-        title: 'Kiwi',
-        price: '350.000',
-    },
-];
 
 const CERTIFY = [
     {
@@ -101,6 +27,28 @@ const CERTIFY = [
 ];
 
 function Store() {
+    const [listProduct, setListProduct] = useState([]);
+    const [listNewProduct, setListNewProduct] = useState([]);
+
+    useEffect(() => {
+        const fetchListProduct = async () => {
+            const res = await productService.getListProduct();
+            if (res) {
+                // console.log(res.data);
+                setListProduct(res.data);
+            }
+        };
+
+        const fetchListNewProduct = async (limitNumber) => {
+            const res = await productService.getListNewProduct(limitNumber);
+            if (res) {
+                console.log(res.data);
+                setListNewProduct(res.data);
+            }
+        };
+        fetchListNewProduct(4);
+        fetchListProduct();
+    }, []);
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -110,8 +58,8 @@ function Store() {
                         <p className={cx('text')}>SẢN PHẨM MỚI </p>
                     </div>
                     <div className={cx('content')}>
-                        {NEW_PRODUCT_ITEMS.map((item, index) => (
-                            <NewProductItem key={index} data={item} />
+                        {listNewProduct.map((item, index) => (
+                            <NewProductItem key={index} Data={item} />
                         ))}
                     </div>
                 </div>
@@ -141,8 +89,8 @@ function Store() {
                     </div>
 
                     <div className={cx('content')}>
-                        {PRODUCT.map((item, index) => (
-                            <NewProductItem className={cx('item')} key={index} data={item} />
+                        {listProduct.map((item, index) => (
+                            <NewProductItem className={cx('item')} key={index} Data={item} />
                         ))}
                     </div>
                 </div>
