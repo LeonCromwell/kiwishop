@@ -1,0 +1,135 @@
+
+
+.wrapper{
+    --search-boder-radius: 92px;
+    --search-height: 46px;
+    --search-top-space: 9px;
+    --search-button-width: 52px;
+
+
+
+    width: 100%;
+    height: 131.078px;
+   
+    .text-logo {
+        color: #86BA09;
+        font-family: Akaya Telivigala;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        // margin: 0px 107px  ;
+            }
+
+    .inner{
+        width: 100%;
+        height: 100%;
+        padding: 20px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+}
+.middle{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    // border-bottom: 1px solid #86BA09;
+
+    .header-logo{
+        p{
+            margin-bottom: 0;
+        }
+    }
+   
+}
+
+
+
+.group{
+    display: flex;
+    align-items: center;
+
+    ul li {
+        height: 100%;
+    }
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+header ul li a::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #86BA09;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+
+}
+
+
+header ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.header-icon{
+    display: flex;
+    align-items: center;
+    gap: 47px;
+    a {
+        display: flex;
+        color: #86BA09;
+        justify-content: center;
+        align-items: center ;
+        background-color: transparent;
+        transition: scale 0.2s ease-in-out;
+        
+    
+        &:hover {
+            cursor: pointer;
+            scale: 1.3;
+        }
+    }
+}
+
+.user-icon, .cart-icon {
+    scale: 0.8;
+    background-color: #fff;
+   
+}
+
+.avt{
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+

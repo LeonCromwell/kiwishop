@@ -10,12 +10,12 @@ import style from './AuthForm.module.scss';
 import Button from '../Button';
 import * as Action from '~/store/action';
 import * as loginService from '~/Services/authService/loginService';
+import * as registerService from '~/Services/authService/registerService';
 
 const cx = classNames.bind(style);
 
 function AuthForm(props) {
     const [variant, setVariant] = useState('login');
-    const [currentUser, setCurrentUser] = useState();
 
     //toast
     const notify = () => toast.success('Đăng nhập thành công');
@@ -41,20 +41,13 @@ function AuthForm(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [variant]);
 
-    useEffect(() => {
-        props.dispatch(Action.setCurrentUser(currentUser));
-        // console.log(props.currentUser);
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [currentUser]);
-
     const onSubmit = async (Data) => {
         if (variant === 'login') {
             try {
                 const res = await loginService.login(Data.username, Data.password);
                 if (res) {
                     notify();
-                    setCurrentUser(res);
+                    localStorage.setItem('user', JSON.stringify(res));
                     setTimeout(() => {
                         window.location.href = '/';
                     }, 5000);
@@ -63,6 +56,21 @@ function AuthForm(props) {
                 }
             } catch (error) {
                 console.log(error);
+            }
+        } else if (variant === 'register') {
+            try {
+                const res = await registerService.register(Data.email, Data.username, Data.password);
+                if (res) {
+                    toast.success('Đăng ký thành công');
+                    props.dispatch(Action.setCurrentUser(res));
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 5000);
+                } else {
+                    toast.error('Đăng ký thất bại');
+                }
+            } catch (error) {
+                toast.error('Đăng ký thất bại');
             }
         }
     };
@@ -76,14 +84,14 @@ function AuthForm(props) {
                             <input
                                 type="text"
                                 placeholder="Tên tài khoản / Email"
-                                {...register('username', { require: true })}
+                                {...register('username', { required: true })}
                             />
                         </div>
                         <div className={cx('row')}>
                             <input
                                 type="password"
                                 placeholder="Mật khẩu"
-                                {...register('password', { require: true })}
+                                {...register('password', { required: true })}
                             />
                         </div>
                         <div className={cx('row')} id={cx('group')}>
@@ -97,27 +105,29 @@ function AuthForm(props) {
                 ) : (
                     <>
                         <div className={cx('row')}>
-                            <input type="email" placeholder="Email address" {...register('email', { require: true })} />
+                            <input
+                                type="email"
+                                placeholder="Email address"
+                                {...register('email', { required: true })}
+                            />
+                        </div>
+                        <div className={cx('row')}>
+                            <input type="text" placeholder="Username" {...register('username', { required: true })} />
                         </div>
                         <div className={cx('row')}>
                             <input
                                 type="password"
-                                placeholder="Mật khẩu"
-                                {...register('password', { require: true })}
+                                placeholder="Password"
+                                {...register('password', { required: true })}
                             />
                         </div>
-                        <div className={cx('row')}>
-                            <input type="text" placeholder="Họ và tên" {...register('fullName', { require: true })} />
-                        </div>
+
                         <div className={cx('row')}>
                             <input
                                 type="text"
-                                placeholder="Số điện thoại"
-                                {...register('phoneNumber', { require: true })}
+                                placeholder="Confirm Password"
+                                {...register('confirmpassword', { required: true })}
                             />
-                        </div>
-                        <div className={cx('row')}>
-                            <input type="text" placeholder="Địa chỉ" {...register('address', { require: true })} />
                         </div>
                     </>
                 )}

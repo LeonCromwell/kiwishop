@@ -21,7 +21,11 @@ function Header({ variant }) {
                   variant === 'cart'
                       ? setTitle('GIỎ HÀNG')
                       : (function () {
-                            variant === 'login' ? setTitle('ĐĂNG NHẬP') : setTitle('ĐĂNG KÝ');
+                            variant === 'login'
+                                ? setTitle('ĐĂNG NHẬP')
+                                : (function () {
+                                      variant === 'register' ? setTitle('ĐĂNG KÝ') : setTitle('PROFILE');
+                                  })();
                         })();
               })();
     }, [variant]);

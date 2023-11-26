@@ -46,7 +46,8 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        overflow: wrap;
+        overflow: hidden;
+        text-overflow: hidden;
     }
     
 }

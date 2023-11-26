@@ -10,7 +10,6 @@ import * as productService from '~/Services/ProductService/productService';
 
 const cx = classNames.bind(style);
 
-
 const CERTIFY = [
     {
         img: Certify.certify1,
@@ -42,7 +41,7 @@ function Store() {
         const fetchListNewProduct = async (limitNumber) => {
             const res = await productService.getListNewProduct(limitNumber);
             if (res) {
-                console.log(res.data);
+                console.log(res);
                 setListNewProduct(res.data);
             }
         };

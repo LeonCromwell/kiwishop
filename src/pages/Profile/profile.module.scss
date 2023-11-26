@@ -1,0 +1,103 @@
+.wrapper{
+    width: 100%;
+    padding: 20px 50px 44px 50px;
+    .inner{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        form{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .left{
+            width: 574px;
+            // height: 248px;
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            gap: 35px;
+            .infor{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.left-avt{
+    width: 264px;
+    height: 264px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid #000;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &:last-child{
+        margin-top: 100px;
+        justify-content: center;
+    }
+
+    .btn-save{
+        display: flex;
+        width: 200px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        background: #7F9C39;
+        color: #fff;
+    }
+
+    div{
+
+        &:first-child{
+            display: flex;
+            align-items: center;
+            gap: 29px;
+           p{
+            margin-bottom: 0;
+           }
+        }
+    }
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    input{
+        width: 558px;
+        height: 55px;
+        flex-shrink: 0;
+        border-radius: 5px;
+        border: 1px solid #000;
+        padding-left: 27px;
+    }
+    textarea{
+        display: inline-flex;
+        height: 126px;
+        padding: 10px 17px;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+    .infor, .address{
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+}

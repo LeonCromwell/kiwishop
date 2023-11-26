@@ -4,27 +4,30 @@ import classNames from 'classnames/bind';
 
 import style from './MyVerticallyCenteredModal.module.scss';
 import Image from '../Image';
-import Productdetails from '~/assets/Image/Productdetails';
 import Button from '../Button';
 import { CartIconbtn } from '~/components/Icons';
 
 const cx = classNames.bind(style);
 
-function MyVerticallyCenteredModal(props) {
+function MyVerticallyCenteredModal({ Data, ...props }) {
     return (
         <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header closeButton />
             <Modal.Body>
                 <div className={cx('wrapper')}>
                     <div className={cx('left')}>
-                        <Image src={Productdetails.dau_tay} />
+                        {Data.images[0] ? (
+                            <Image src={Data.images[0].data} className={cx('image')} />
+                        ) : (
+                            <Image src="adkjfda" className={cx('image')} />
+                        )}
                     </div>
                     <div className={cx('right')}>
                         <div className={cx('title')}>
-                            <p>Dâu tây </p>
-                            <p>Xuất xứ: Hàn Quốc </p>
+                            <p>{Data.name}</p>
+                            <p>Xuất xứ: {Data.origin} </p>
                             <p>Khối lượng: 250g/1 hộp </p>
-                            <p>Giá tiền: 400.000đ/1kg </p>
+                            <p>Giá tiền: {Data.price}đ/1kg </p>
                             <div className={cx('number')}>
                                 <p>Số lượng:</p>
                                 <div className={cx('action')}>

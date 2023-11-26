@@ -17,7 +17,11 @@ function NewProductItem({ Data, className }) {
     return (
         <>
             <div className={cx('wrapper', className)} onClick={handleClick}>
-                <Image src={Data.images[0].data} className={cx('image')} />
+                {Data.images[0] ? (
+                    <Image src={Data.images[0].data} className={cx('image')} />
+                ) : (
+                    <Image src="adkjfda" className={cx('image')} />
+                )}
 
                 <div className={cx('content')}>
                     <div className={cx('title')}>{Data.name}</div>
@@ -25,7 +29,7 @@ function NewProductItem({ Data, className }) {
                 </div>
             </div>
 
-            <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+            <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} Data={Data} />
         </>
     );
 }

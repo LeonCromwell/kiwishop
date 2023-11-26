@@ -5,6 +5,10 @@ const routes = {
     newfruits: '/newfruits',
     auth: '/auth',
     cart: '/cart',
+    profile: '/profile',
+    adminCreateProduct: '/admin/create-product',
+    productmanager: '/admin/product-manager',
+    productdetail: '/admin/product-detail',
     // register: '/register',
 };
 

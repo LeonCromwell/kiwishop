@@ -44,7 +44,6 @@ const NEW_PRODUCT_ITEMS = [
 ];
 function Cart(props) {
     const { register, handleSubmit } = useForm();
-    const [quantity, setQuantity] = useState(0);
 
     useEffect(() => {
         props.dispatch(Actions.setVariant('cart'));
@@ -115,12 +114,17 @@ function Cart(props) {
                         <div className={cx('row')}>
                             <input type="text" placeholder="Địa chỉ" {...register('address', { required: true })} />
                         </div>
-                        <Button type="submit" className={cx('btn-submit')}>
-                            Đặt hàng
-                        </Button>
                     </form>
                 </div>
-                <div className={cx('bill')}></div>
+                <div className={cx('bill')}>
+                    <p>THANH TOÁN </p>
+                    <p>Phương thức: Thanh toán khi nhận hàng </p>
+                    <p>
+                        Tổng thanh toán: <span style={{ color: 'red' }}> 3.300.000đ</span>
+                    </p>
+
+                    <Button className={cx('submit-btn')}>Đặt hàng</Button>
+                </div>
             </div>
         </div>
     );
